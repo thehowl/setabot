@@ -33,8 +33,6 @@ func (b *Bot) Start() error {
 		log.Panic(err)
 	}
 
-	b.bot.Debug = true
-
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
 
