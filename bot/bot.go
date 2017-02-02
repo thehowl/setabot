@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"fmt"
 	"log"
 
 	"strings"
@@ -44,6 +45,7 @@ func (b *Bot) Start() error {
 
 	for update := range updates {
 		if update.Message != nil {
+			fmt.Println("@"+update.Message.From.UserName, "-", update.Message.Text)
 			go b.handleUpdate(update)
 		}
 	}

@@ -84,6 +84,11 @@ func (b *Bot) qm(u tgbotapi.Update) {
 		return
 	}
 
+	if len(arrivals) == 0 {
+		b.send(tgbotapi.NewMessage(u.Message.Chat.ID, "Hmm... Non sembra esserci nessun'autobus a quest'ora!"))
+		return
+	}
+
 	msg := tgbotapi.NewMessage(u.Message.Chat.ID, "")
 	msg.Text = fmt.Sprintf("Ho trovato %d risultati per %s:\n\n", len(arrivals), chosen.Name)
 	for _, arrival := range arrivals {
