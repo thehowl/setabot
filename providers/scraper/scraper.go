@@ -25,7 +25,7 @@ func (s *Scraper) GetArrivals(city, stopID, stopName string) ([]services.Arrival
 	vals.Add("nome_fermata", stopName)
 	vals.Add("qm_palina", stopID)
 	vals.Add("x", "13")
-	vals.Add("nome_fermata", "12")
+	vals.Add("y", "12")
 	resp, err := http.PostForm("http://www.setaweb.it/mo/quantomanca", vals)
 	if err != nil {
 		return nil, err
@@ -36,7 +36,7 @@ func (s *Scraper) GetArrivals(city, stopID, stopName string) ([]services.Arrival
 	if err != nil {
 		return nil, err
 	}
-	rows := doc.Find("table.qm_table_risultat").First().Find("tbody tr")
+	rows := doc.Find("table.qm_table_risultati").First().Find("tbody tr")
 
 	// create arrivals slice which will then be returned
 	arrivals := make([]services.Arrival, 0, rows.Length())

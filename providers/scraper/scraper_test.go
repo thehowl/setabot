@@ -8,7 +8,7 @@ import (
 
 func TestGetArrivals(t *testing.T) {
 	s := new(scraper.Scraper)
-	arrs, err := s.GetArrivals("mo", "MO3745", "MARZAGLIA VECCHIA")
+	arrs, err := s.GetArrivals("mo", "MO10", "MODENA  AUTOSTAZIONE")
 	if err != nil {
 		t.Fatal(err)
 	}
