@@ -55,11 +55,13 @@ func (b *Bot) Start() error {
 }
 
 func (b *Bot) handleUpdate(u tgbotapi.Update) {
-	txt := u.Message.Text
+	// we are adding a space to the text because we nevertheless want to match
+	// commands like /start (with no arguments).
+	txt := strings.ToLower(u.Message.Text + " ")
 	for cname, han := range b.commands {
 		// we want to match /qm Galilei. We don't want to match /qmGalilei.
 		cname += " "
-		if strings.HasPrefix(strings.ToLower(txt), cname) {
+		if strings.HasPrefix(txt, cname) {
 			u.Message.Text = strings.TrimSpace(strings.TrimPrefix(txt, cname))
 			han(u)
 			return
