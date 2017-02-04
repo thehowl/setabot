@@ -85,7 +85,7 @@ func (b *Bot) qm(u tgbotapi.Update) {
 	}
 
 	if len(arrivals) == 0 {
-		b.send(tgbotapi.NewMessage(u.Message.Chat.ID, "Hmm... Non sembra esserci nessun'autobus a quest'ora!"))
+		b.send(tgbotapi.NewMessage(u.Message.Chat.ID, "Hmm... Non sembra esserci nessun autobus a quest'ora!"))
 		return
 	}
 
