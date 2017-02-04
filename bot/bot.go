@@ -25,6 +25,7 @@ func (b *Bot) Start() error {
 	b.commands = map[string]func(u tgbotapi.Update){
 		"/start":  b.start,
 		"/qm":     b.qm,
+		"/search": b.search,
 		"sono di": b.imFrom,
 	}
 
@@ -56,6 +57,8 @@ func (b *Bot) Start() error {
 func (b *Bot) handleUpdate(u tgbotapi.Update) {
 	txt := u.Message.Text
 	for cname, han := range b.commands {
+		// we want to match /qm Galilei. We don't want to match /qmGalilei.
+		cname += " "
 		if strings.HasPrefix(strings.ToLower(txt), cname) {
 			u.Message.Text = strings.TrimSpace(strings.TrimPrefix(txt, cname))
 			han(u)

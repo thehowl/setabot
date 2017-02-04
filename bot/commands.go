@@ -102,3 +102,40 @@ func (b *Bot) qm(u tgbotapi.Update) {
 
 	b.send(msg)
 }
+
+// search through stops for something with that name.
+func (b *Bot) search(u tgbotapi.Update) {
+	city := b.getCity(u.Message.From.ID)
+	if city == "" {
+		b.send(tgbotapi.NewMessage(u.Message.Chat.ID, "Mi serve prima sapere di che città sei!"))
+		return
+	}
+
+	// get the stops for the city
+	sts := stops.CityStops[city]
+
+	// n is the number of stops currently matched, and stopsText is the message
+	// to return.
+	var (
+		n         int
+		stopsText string
+	)
+
+	// ToLower because we want the search to be case insensitive
+	u.Message.Text = strings.ToLower(u.Message.Text)
+
+	for _, st := range sts {
+		if strings.Contains(strings.ToLower(st.Name), u.Message.Text) {
+			// if the matched result is the 151st, then we just skip and say
+			// there are more than
+			if n == 150 {
+				stopsText += "* E altri...\n"
+				break
+			}
+			stopsText += "* " + st.Name + "\n"
+			n++
+		}
+	}
+
+	b.send(tgbotapi.NewMessage(u.Message.Chat.ID, fmt.Sprintf("Ottenuti %d risultati.\n%s", n, stopsText)))
+}
