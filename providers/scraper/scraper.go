@@ -36,7 +36,7 @@ func (s *Scraper) GetArrivals(city, stopID, stopName string) ([]services.Arrival
 	if err != nil {
 		return nil, err
 	}
-	rows := doc.Find("table.qm_table_risultati tbody tr")
+	rows := doc.Find("table.qm_table_risultat").First().Find("tbody tr")
 
 	// create arrivals slice which will then be returned
 	arrivals := make([]services.Arrival, 0, rows.Length())
