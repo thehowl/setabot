@@ -25,7 +25,7 @@ func (b *Bot) Start() error {
 	b.commands = map[string]func(u tgbotapi.Update){
 		"/start":  b.start,
 		"/qm":     b.qm,
-		"Sono di": b.imFrom,
+		"sono di": b.imFrom,
 	}
 
 	var err error
@@ -56,7 +56,7 @@ func (b *Bot) Start() error {
 func (b *Bot) handleUpdate(u tgbotapi.Update) {
 	txt := u.Message.Text
 	for cname, han := range b.commands {
-		if strings.HasPrefix(txt, cname) {
+		if strings.HasPrefix(strings.ToLower(txt), cname) {
 			u.Message.Text = strings.TrimSpace(strings.TrimPrefix(txt, cname))
 			han(u)
 			return

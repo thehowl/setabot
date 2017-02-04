@@ -16,7 +16,7 @@ Per chiedermi gli autobus che devono arrivare ad una fermata, usa il comando /qm
 /qm Ca' Bianca
 
 Il bot può essere un po' stupido a volte a capire a che fermata ti stai riferendo. Prima o poi lo metterò a posto.
-Se vuoi dare un'occhiata al codice sorgente, puoi vederlo qui: https://github.com/thehowl/setabusbot (l'ho fatto in un paio d'ore per noia, quindi il codice fa abbastanza schifo)`
+Sorgente disponibile qui: https://github.com/thehowl/setabusbot`
 
 // welcome message
 func (b *Bot) start(u tgbotapi.Update) {
