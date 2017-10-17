@@ -1,4 +1,4 @@
-// Package scraper implements setabusbot's services through web scraping.
+// Package scraper implements setabot's services through web scraping.
 package scraper
 
 import (
@@ -8,10 +8,10 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/thehowl/setabusbot/services"
+	"github.com/thehowl/setabot/services"
 )
 
-// Scraper is a provider of the services of setabusbot that fetches data through
+// Scraper is a provider of the services of setabot that fetches data through
 // web scraping.
 type Scraper struct{}
 

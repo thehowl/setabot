@@ -6,12 +6,12 @@ import (
 
 	"strings"
 
-	"github.com/thehowl/setabusbot/services"
+	"github.com/thehowl/setabot/services"
 	"gopkg.in/redis.v5"
 	"gopkg.in/telegram-bot-api.v4"
 )
 
-// Bot is an instance of setabusbot.
+// Bot is an instance of setabot.
 type Bot struct {
 	Redis    *redis.Client
 	BotToken string

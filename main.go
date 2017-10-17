@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/thehowl/setabusbot/bot"
-	"github.com/thehowl/setabusbot/providers/scraper"
+	"github.com/thehowl/setabot/bot"
+	"github.com/thehowl/setabot/providers/scraper"
 	redis "gopkg.in/redis.v5"
 )
 

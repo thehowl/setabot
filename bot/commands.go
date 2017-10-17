@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/thehowl/setabusbot/stops"
+	"github.com/thehowl/setabot/stops"
 	"gopkg.in/telegram-bot-api.v4"
 )
 
@@ -16,7 +16,7 @@ Per chiedermi gli autobus che devono arrivare ad una fermata, usa il comando /qm
 /qm Ca' Bianca
 
 Il bot può essere un po' stupido a volte a capire a che fermata ti stai riferendo. Prima o poi lo metterò a posto.
-Sorgente disponibile qui: https://github.com/thehowl/setabusbot`
+Sorgente disponibile qui: https://github.com/thehowl/setabot`
 
 // welcome message
 func (b *Bot) start(u tgbotapi.Update) {

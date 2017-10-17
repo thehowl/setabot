@@ -3,7 +3,7 @@ package scraper_test
 import (
 	"testing"
 
-	"github.com/thehowl/setabusbot/providers/scraper"
+	"github.com/thehowl/setabot/providers/scraper"
 )
 
 func TestGetArrivals(t *testing.T) {
