@@ -4,7 +4,7 @@ Un bot di Telegram per gli abitanti di Reggio Emilia, Modena e Piacenza che
 desiderano mobilitarsi con la SETA senza dover utilizzare l'interfaccia del
 sito della SETA.
 
-![](https://u.nya.is/tyqwgw.png)
+![example usage](https://a.pomfe.co/ddevzqt.png)
 
 Contatto: https://t.me/setabot
 
